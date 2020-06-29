@@ -16,7 +16,9 @@ const pool = new Pool({
       if (error) {
         throw error
       }
-      response.status(201).send(`User added with ID: ${result.insertuser_id}`)
+      console.log(results)
+      //response.status(200).send(`User added with ID: ` + results.oid)
+      response.status(200).send(`User added successfully`)
     })
   }
 
@@ -64,7 +66,7 @@ const listOFUsers = (request, response) => {
     if (error) {
       throw error
     }
-    response.status(201).send(result)
+    response.status(201).send(results.rows)
   })
 }
 
